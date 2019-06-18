@@ -13,6 +13,7 @@
 \usecolortheme{beaver} % or try albatross, beaver, crane, ...
 \usefonttheme{professionalfonts}  % or try serif, structurebold, ...
 \setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{footline}[frame number]
 \setbeamertemplate{caption}[numbered]
 \usepackage{ragged2e}
 \usepackage[spanish]{babel}
@@ -58,19 +59,20 @@
 \resetcounteronoverlays{saveenumi}
 
 
-\title[MIDAS]{Asociación de variantes en regiones codificantes de genes con datos clínicos en pacientes colombianos usando minería de datos.}
+\title[MIDAS]{Asociación de variantes en regiones codificantes de genes con datos clínicos en pacientes colombianos usando minería de datos}
 \author[Vélez, Jennifer.]{
-    Autor: Jennifer Vélez Segura \\
-    Director: Elizabeth León Guzmán \\
-    Asesor: Claudia Serrano
+    Autor: Lic. Biol. Jennifer Vélez Segura Ms(C) en Bioinformática\\
+    Director: Ing. Elizabeth León Guzmán PhD \\
+    Asesor: MD. Claudia Serrano MSc.
 }
 
 \institute[U. Nacional de Colombia]
 {
+	Maestría en Bioinformática \\
 	Grupo de Investigación -- MIDAS\\   
     Universidad Nacional de Colombia, Bogot\'{a} D.C., Colombia
 }
-\date{Mayo 2019}
+\date{Junio 2019}
 
 \setbeamercolor{section in toc}{fg=myNewColorBack}
 
@@ -126,52 +128,48 @@
 \section{Introducción}
 
 \begin{frame}{Introducción}
-    
-\justifying
-La necesidad de comprender los procesos biológicos que están implicados en las distintas enfermedades, a partir de  la secuenciación del ADN  presentan la oportunidad de aplicar diferentes tipos de análisis que ayuden a entender la relación genotipo-fenotipo. 
-\hfill \break 
-
-\begin{figure}
-    \centering
-    \includegraphics[width=60]{variacionhumna.png}
-  \end{figure}
-  
-\hfill \break
-\tiny{https://www.ebi.ac.uk/training/online/course/human-genetic-variation-i-introduction}
-\end{frame}
-
-\section{Secuenciación}
-
-\begin{frame}{Análisis de secuencias de ADN}
-	
-	El proceso de análisis de secuencias se realiza a través de los siguientes pasos:
-	
-	\begin{itemize}
-		\item Extracción de ADN.
-		\item Secuenciación de la muestra de ADN.
-		\item Obtención de lecturas.
-		\item Análisis de genes.
-		\item Generación de reportes.
-	\end{itemize}
-	
-\end{frame}
-
-\begin{frame}{Secuenciación}	
 	\justifying
-	La secuenciación es el proceso químico que permite identificar el orden de nucleótidos en molécula de ADN, ARN o una proteína \cite{Kulski2016}.
-
-	\centering 
-	\includegraphics[width=60mm]{secuenciacion}
-	
-	\hfill \break
-	
-	\justifying
-	\tiny{Tomado de: https://experiment.com/u/v0RZUQ}
+	La necesidad de comprender los procesos biológicos que están implicados en las distintas enfermedades, a partir de  la secuenciación del ADN  presentan la oportunidad de aplicar diferentes tipos de análisis que ayuden a entender la relación genotipo-fenotipo 
+	\hfill \break 
+	\begin{figure}
+		\centering
+		\includegraphics[width=40mm]{variacionhumna.png}
+	\end{figure}
+		\hfill \break
+		\tiny{https://www.ebi.ac.uk/training/online/course/human-genetic-variation-i-introduction}
 \end{frame}
+	
+
+%\begin{frame}{Análisis de secuencias de ADN}
+	
+%	El proceso de análisis de secuencias se realiza a través de los siguientes pasos:
+	
+%	\begin{itemize}
+%		\item Extracción de ADN.
+%		\item Secuenciación de la muestra de ADN.
+%		\item Obtención de lecturas.
+%		\item Análisis de genes.
+%		\item Generación de reportes.
+%	\end{itemize}
+	
+%\end{frame}
+
+%\begin{frame}{Secuenciación}	
+%	\justifying
+%	La secuenciación es el proceso químico que permite identificar el orden de nucleótidos o aminoácidos  en molécula de ADN, ARN o una proteína \cite{Kulski2016}.
+
+%	\centering 
+%	\includegraphics[width=60mm]{secuenciacion}
+	
+%	\hfill \break
+	
+%	\justifying
+%	\tiny{Tomado de: https://experiment.com/u/v0RZUQ}
+%\end{frame}
 
 \begin{frame}{Secuenciación de siguiente generación (NGS)}	
 	\justifying
-	Se han desarrollado diferentes metodologías para realizar secuenciación, estas son conocidas como secuenciación de alto rendimiento y tienen la capacidad de realizar secuenciaciones de manera masiva, rápida y económica  \cite{Kulski2016}. 
+	Se han desarrollado diferentes metodologías para realizar secuenciación, estas son conocidas como secuenciación de alto rendimiento y tienen la capacidad de realizar secuenciaciones de manera masiva, rápida y económica  \cite{Kulski2016} 
 	
 \hfill \break
 	\centering
@@ -184,16 +182,16 @@ La necesidad de comprender los procesos biológicos que están implicados en las
 	
 \end{frame}
 
-\begin{frame}{Secuenciación con Illumina}
-	\centering
-	\includegraphics[width=11cm]{secuenciacion1.png}
-\end{frame}
+%\begin{frame}{Secuenciación con Illumina}
+%	\centering
+%	\includegraphics[width=11cm]{secuenciacion1.png}
+%\end{frame}
 
 \subsection{Alineamiento}
 
 \begin{frame}{Alineamiento}
 	\justifying
-	Es el proceso de mapear las lecturas secuenciadas usando un genoma de referencia, que para humanos generalmente es el hg19.
+	Es el proceso de mapear las lecturas secuenciadas usando un genoma de referencia, que para humanos generalmente es el hg19
 	\hfill \break
 	
 	\begin{figure}
@@ -227,16 +225,14 @@ La necesidad de comprender los procesos biológicos que están implicados en las
 
 \begin{enumerate}
 	\justifying
-	\item No existe un protocolo \textit{``gold standard"} para realizar un análisis de secuencias.
+	\item No existe un protocolo \textit{``gold standard"} para realizar un análisis de secuencias
 	
-	\item Existe una gran cantidad de información obtenida que no es posible de analizar sin utilizar métodos computacionales.
+	\item Existe una gran cantidad de información obtenida que no es posible de analizar sin utilizar métodos computacionales
 	
-	\item La población colombiana no cuenta con estudios de este tipo y no se encuentra caracterizada como otras poblaciones.
+	\item La población colombiana no cuenta con estudios de este tipo y no se encuentra caracterizada como otras poblaciones
 	
-	\item En la mayoría de los estudios realizados no cuentan con la información clínica.
+	\item En la mayoría de los estudios realizados no cuentan con la información clínica
 \end{enumerate}
-
-   
 \end{frame}
 
 \subsection{Objetivos}
@@ -245,17 +241,25 @@ La necesidad de comprender los procesos biológicos que están implicados en las
 	
 	\begin{block}{}
 		{\justifying 
-			Proponer un modelo de minería de datos que permita asociar variantes con características clínicas de pacientes colombianos.
+			Proponer un modelo de minería de datos que permita asociar variantes con características clínicas de pacientes colombianos
 		}
 	\end{block}
 	
 	\begin{itemize}
-		\item Realizar la identificación de variantes en pacientes colombianos.
-		\item Integrar la información clínica con las variantes obtenidas.
-		\item Diseñar e implementar un modelo de asociación entre variantes e historias clínicas.
-		\item Validar y visualizar los resultados del modelo de minería.
+		\item Realizar la identificación de variantes en pacientes colombianos
+		\item Integrar la información clínica con las variantes obtenidas
+		\item Diseñar e implementar un modelo de asociación entre variantes e historias clínicas
+		\item Validar y visualizar los resultados del modelo de minería
 	\end{itemize}
-		
+	
+\begin{table}[]
+\justifying
+\begin{tabular}{|l|}
+\hline
+\tiny
+\textit{Limitaciones:}  Muestra, F. ambientales, diagnóstico y regiones. \\ \hline
+\end{tabular}
+\end{table}
 \end{frame}
 
 \section{Integración de datos}
@@ -264,9 +268,7 @@ La necesidad de comprender los procesos biológicos que están implicados en las
 \begin{frame}{Datos}
 
 \begin{block}{Origen de los datos}
-	{\justifying 
-		Los datos utilizados en el presente trabajo proviene de las historias clínicas de 228 pacientes colombianos, distribuidos en 133 pacientes femeninas y 95 pacientes masculinos secuenciados en regiones codificantes de 4813 genes. 
-	}
+	\justifying{Los datos utilizados en el presente trabajo proviene de las historias clínicas de 227 pacientes colombianos, distribuidos en 133 pacientes femeninas y 94 pacientes masculinos secuenciados en regiones codificantes de 4813 genes}
 \end{block}
 
 \textit{Estos datos fueron otorgados por el Laboratorio Genetix S.A.S.}
@@ -278,22 +280,22 @@ La necesidad de comprender los procesos biológicos que están implicados en las
 \end{figure}
 \end{frame}
 
-\begin{frame}{Identificación de variantes}
-	\justifying 
-	Los pipelines bioinformáticos para NGS son comúnmente desarrollados en una plataforma específica y pueden ser adaptados según las necesidades del laboratorio, la mayoría de los pipelines consisten en los siguientes pasos \cite{Roy2018}:
-	\justifying 
-	\begin{enumerate}[1.]
-		\justifying
-		\item Generación de secuencias.
-		\item Alineamiento de las secuencias.
-		\item Llamado de variantes.
-		\item Filtrado de variantes.
-		\item Anotación de variantes.
-		\item Priorización de variantes. 
-	\end{enumerate}
-\end{frame}
+%\begin{frame}{Identificación de variantes}
+%	\justifying 
+%	Los pipelines bioinformáticos para NGS son comúnmente desarrollados en una plataforma específica y pueden ser adaptados según las necesidades del laboratorio, la mayoría de los pipelines consisten en los siguientes pasos \cite{Roy2018}:
+%	\justifying 
+%	\begin{enumerate}[1.]
+%		\justifying
+%		\item Generación de secuencias
+%		\item Alineamiento de las secuencias
+%		\item Llamado de variantes
+%		\item Filtrado de variantes
+%		\item Anotación de variantes
+%		\item Priorización de variantes
+%	\end{enumerate}
+%\end{frame}
 
-\begin{frame}{Pipeline implementado en un cluster}
+\begin{frame}{Pipeline implementado en un clúster}
 	
 	\begin{figure}
 		\includegraphics[width=1\textwidth]{pipeline1}
@@ -313,8 +315,8 @@ La necesidad de comprender los procesos biológicos que están implicados en las
 \begin{frame}{Validación}
 	
 	\begin{enumerate}[1.]
-		\item Validación con datos internos. Datos de un paciente con 4813 genes(Illumina).
-		\item Validación con datos públicos. Datos del exoma completo NA12878.
+		\item Validación con datos internos. Datos de un paciente con 4813 genes (Illumina)
+		\item Validación con datos públicos. Datos del exoma completo NA12878
 	\end{enumerate}
 	\centering
 	\includegraphics[width=30mm]{validacion.png}
@@ -349,6 +351,7 @@ La necesidad de comprender los procesos biológicos que están implicados en las
 \begin{frame}{Validación externa}
 
 Validación con el exoma \textbf{NA12878}
+\\\
 \begin{table}[H]
 	\centering  
 	\begin{tabular}{l|l|l|l|}
@@ -374,7 +377,7 @@ Validación con el exoma \textbf{NA12878}
 	    \begin{center}
 		    \begin{tabular}{|l|l|}
 			    \hline 
-			    \textbf{TP} &  \textbf{TN} \\
+			    \textbf{VP} &  \textbf{VN} \\
 			    \hline 
 			    32110 & 0  \\ \hline
 			    \textbf{FP} &  \textbf{FN} \\
@@ -410,12 +413,15 @@ Validación con el exoma \textbf{NA12878}
 \end{figure}
 
 \end{frame}
-
+\subsection{Historias Clínicas}
 \begin{frame}{Historias Clínicas}
-
-
+\justifying
+Las historias fueron transcritas manualmente omitiendo los datos de nombre, documento de identidad e información de la institución que remite la información. Ejemplo de historia clínica:
+\begin{figure}
+\includegraphics[width=0.4\textwidth]{HC.JPG}
+\end{figure}
 \end{frame}
-
+\subsection{Modelo de datos}
 \begin{frame}{Modelo de datos}
 Modelo de datos relacional con las siguientes relaciones de información clínica y variantes:
       \begin{figure}
@@ -447,8 +453,6 @@ Modelo de datos relacional con las siguientes relaciones de información clínic
 La Bases de Datos fue implementada en Mysql, y la interfaz en Django.
 \end{frame}
 
-
-
 \begin{frame}{Interfaz de consulta}
 	\begin{figure}
 		\includegraphics[width=\textwidth]{consulta}
@@ -456,12 +460,21 @@ La Bases de Datos fue implementada en Mysql, y la interfaz en Django.
 		\text{Consulta por Gen}
 	\end{figure}
 \end{frame}
+
+\begin{frame}{Interfaz de consulta}
+	\begin{figure}
+		\includegraphics[width=\textwidth]{consulta2}
+		\newline
+		\text{Consulta por historia clínica}
+	\end{figure}
+\end{frame}
+
 \section{Minería de datos}
-\subsection{Preprocesamento}
+\subsection{Preprocesamiento}
 
 \begin{frame}{Modelo propuesto}
 \begin{figure}
-\includegraphics[width=1\textwidth]{KDDtesis.pdf}
+\includegraphics[width=1\textwidth]{Slide3.JPG}
 \end{figure}
 \end{frame}
 
@@ -477,39 +490,14 @@ La Bases de Datos fue implementada en Mysql, y la interfaz en Django.
    	\begin{enumerate}[1.]
    	
 		\justifying 
-		\item Remoción de \textit{``stop words''} en español, tildes y caracteres especiales como la letra ñ y  unificación en letras minúsculas.
-		\item Creación de un diccionario de sinónimos, donde se reemplazaron palabras que hacen referencia a una misma característica, teniendo en cuenta la interpretación clínica.
-		\item Cálculo de la frecuencias de palabras dentro de los documentos. 
-		\item Remoción de las palabras que no son factor diferenciador de los diagnósticos, como: \textit{pacientes},\textit{pam}, \textit{secuenciación} y \textit{gen}.  
+		\item Remoción de \textit{``stop words''} en español, tildes y caracteres especiales como la letra ñ y  unificación en letras minúsculas
+		\item Creación de un diccionario de sinónimos, donde se reemplazaron palabras que hacen referencia a una misma característica, teniendo en cuenta la interpretación clínica
+		\item Cálculo de la frecuencias de palabras dentro de los documentos 
+		\item Remoción de las palabras que no son factor diferenciador de los diagnósticos, como: \textit{pacientes}, \textit{panel}, \textit{secuenciación} y \textit{gen} 
 	   	\end{enumerate}
 
 \end{frame}
 
-\begin{frame}{Variantes como transacciones}
-\justifying 
-A las variantes se agruparon por gen y tipo de variante, rango de edad y genero del paciente.
-    \begin{table}[H]
-	\centering
-	\resizebox{10cm}{!}{
-	\begin{tabular}{ll|l|l|l|l|l|l|}
-		\cline{3-8}
-		&   & \textbf{Items} & Tipo de variante & Cigocidad & Rango de edad & Genero & Grupo \\ \hline
-		\multicolumn{1}{|l|}{\multirow{2}{*}{\textbf{Transacciones}}} & 1 & BRCA1          & No sinónima      & Het       & (30-40)       & F      & C1      \\ \cline{2-8} 
-		\multicolumn{1}{|l|}{}                                        & 2 & RB1            & Stop gain        & Het       & (0-10)        & F      & C5      \\ \hline
-	\end{tabular}
-}
-\caption{Items y transacciones}
-\label{tabla:items}
-\end{table}
-
-\end{frame}
-
-
-\begin{frame}{Modelo propuesto}
-\begin{figure}
-\includegraphics[width=1\textwidth]{KDDtesis.pdf}
-\end{figure}
-\end{frame}
 
 \begin{frame}{Análisis de términos frecuentes}
 	
@@ -539,14 +527,22 @@ A las variantes se agruparon por gen y tipo de variante, rango de edad y genero 
 		\end{equation}
 \end{frame}
 
-\subsection{Agrupamiento}
-
-\begin{frame}{Caracterización de la información clínica}
-\justifying
-Es necesario caracterizar las historias clínicas de acuerdo al diagnóstico de los pacientes para poder asociar dichos diagnósticos con las variantes identificadas en este trabajo. Siendo el agrupamiento un metodología que permite identificar separar
-conjuntos de datos de manera no supervisada.
-
+\begin{frame}{Modelo propuesto}
+\begin{figure}
+	\includegraphics[width=1\textwidth]{Slide4.JPG}
+\end{figure}
 \end{frame}
+
+
+
+%\begin{frame}{Agrupamiento aglomerativo jerárquico usando ``average"}
+ %\begin{figure}[H]
+%		\centering
+%		\includegraphics[width=0.9\textwidth]{averagercortado.png}
+%		\centering
+%	\end{figure}
+%\end{frame}
+\subsection{Agrupamiento}
 \begin{frame}{Agrupamiento}
  \begin{figure}
 		\centering
@@ -564,126 +560,223 @@ conjuntos de datos de manera no supervisada.
 	\end{figure}
 \end{frame}
 
-\begin{frame}{Agrupamiento aglomerativo jerárquico usando ``average"}
- \begin{figure}[H]
-		\centering
-		\includegraphics[width=0.9\textwidth]{averagercortado.png}
-		\centering
-	\end{figure}
+\begin{frame}{Grupos}
+\begin{figure}
+	\includegraphics[width=1\textwidth]{GRUPOS.jpg}
+\end{figure}
 \end{frame}
-
-\begin{frame}{Grupos obtenidos usado el kmeans}
-\begin{columns}
-          \column{0.58\linewidth}
-             \centering
-             \includegraphics[width=1\textwidth]{cluster1.png}
-           \column{0.38\linewidth}
-           \justifying
-              \textbf{Grupo 1:} Se muestran las palabras más frecuentes que son \textit{seno,sindrome y cáncer}, otras palabras con menor frecuencia son \textit{familiar sospecha y ovario}.
-         \end{columns}
-\end{frame}
-
-\begin{frame}{Grupos obtenidos usado el kmeans}
-\begin{columns}
-          \column{0.58\linewidth}
-             \centering
-             \includegraphics[width=1\textwidth]{cluster2.png}
-           \column{0.38\linewidth}
-           \justifying
-              \textbf{Grupo 2:} Se muestran las palabras más frecuentes que son \textit{seno,sindrome y cáncer}, otras palabras con menor frecuencia son \textit{tiroides anos y normal}.
-         \end{columns}
-\end{frame}
-
-\begin{frame}{Grupos obtenidos usado el kmeans}
-\begin{columns}
-          \column{0.58\linewidth}
-             \centering
-             \includegraphics[width=1\textwidth]{cluster3.png}
-           \column{0.38\linewidth}
-           \justifying
-              \textbf{Grupo 2:} Se muestran las palabras más frecuentes que son \textit{seno,sindrome y cáncer}, otras palabras con menor frecuencia son \textit{tiroides anos y normal}.
-         \end{columns}
-\end{frame}
-
-\begin{frame}{Grupos obtenidos usado el kmeans}
-\begin{columns}
-          \column{0.58\linewidth}
-             \centering
-             \includegraphics[width=1\textwidth]{cluster2.png}
-           \column{0.38\linewidth}
-           \justifying
-              \textbf{Grupo 2:} Se muestran las palabras más frecuentes que son \textit{seno,sindrome y cáncer}, otras palabras con menor frecuencia son \textit{tiroides anos y normal}.
-         \end{columns}
-\end{frame}
-
-\begin{frame}{Grupos obtenidos usado el kmeans}
-\begin{columns}
-          \column{0.58\linewidth}
-             \centering
-             \includegraphics[width=1\textwidth]{cluster2.png}
-           \column{0.38\linewidth}
-           \justifying
-              \textbf{Grupo 2:} Se muestran las palabras más frecuentes que son \textit{seno,sindrome y cáncer}, otras palabras con menor frecuencia son \textit{tiroides anos y normal}.
-         \end{columns}
-\end{frame}
-
 
 \subsection{Asociación}
 \begin{frame}{Asociación de variantes con grupos de pacientes}
 \justifying{
-Una vez obtenidos los grupos se utilizó el algoritmo Apriori para obtener reglas de asociación de dos formas: 
-
-\begin{enumerate}
-\justifying
-	\item Asociación a las variantes por cada grupo de pacientes obtenidos usando el kmeans. 
-	\item Asociación a las variantes por toda la información de la base de datos filtrada por los genes CFTR y RB1. 
+	Una vez obtenidos los grupos se utilizó el algoritmo Apriori para obtener reglas de asociación de dos formas: 
+	
+	\begin{enumerate}
+		\justifying
+		\item Asociación a las variantes por cada grupo de pacientes obtenidos usando el kmeans 
+		\item Asociación a las variantes por toda la información de la base de datos filtrada por los genes CFTR y RB1
 \end{enumerate}}
 \end{frame}
 
+\begin{frame}{Variantes como transacciones}
+\justifying 
+A las variantes se agruparon por gen y tipo de variante, rango de edad y genero del paciente.
+    \begin{table}[H]
+	\centering
+	\resizebox{10cm}{!}{
+	\begin{tabular}{ll|l|l|l|l|l|l|}
+		\cline{3-8}
+		&   & \textbf{Items} & Tipo de variante & Cigocidad & Rango de edad & Genero & Grupo \\ \hline
+		\multicolumn{1}{|l|}{\multirow{2}{*}{\textbf{Transacciones}}} & 1 & BRCA1          & No sinónima      & Het       & (30-40)       & F      & C1      \\ \cline{2-8} 
+		\multicolumn{1}{|l|}{}                                        & 2 & RB1            & Stop gain        & Het       & (0-10)        & F      & C5      \\ \hline
+	\end{tabular}
+}
+\caption{Items y transacciones}
+\label{tabla:items}
+\end{table}
 
+\end{frame}
+
+\subsection{Resultados}
+
+\begin{frame}{Grupo 1}
+\begin{columns}
+\begin{column}{0.5\textwidth}
+\begin{center}
+\includegraphics[width=1\textwidth]{cluster1} \\
+\begin{itemize}
+    \item[a)] Frecuencia de palabras
+\end{itemize}
+\end{center}
+\end{column}
+\begin{column}{0.5\textwidth}  %%<--- here
+    \begin{center}
+     \includegraphics[width=0.8\textwidth]{reglas1_2.png}
+    \begin{itemize}
+    \centering
+    \item[b)] Reglas
+    \end{itemize}
+    \end{center}
+\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}{Grupo 2}
+
+\begin{columns}
+\begin{column}{0.5\textwidth}
+\begin{center}
+\includegraphics[width=1\textwidth]{cluster2} \\
+\begin{itemize}
+    \item[a)] Frecuencia de palabras
+\end{itemize}
+\end{center}
+\end{column}
+\begin{column}{0.5\textwidth}  %%<--- here
+    \begin{center}
+     \includegraphics[width=1\textwidth]{reglas2_2.png}
+    \begin{itemize}
+    \centering
+    \item[b)] Reglas
+    \end{itemize}
+    \end{center}
+\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}{Grupo 3}
+\begin{columns}
+\begin{column}{0.5\textwidth}
+\begin{center}
+\includegraphics[width=1\textwidth]{cluster3} \\
+\begin{itemize}
+    \item[a)] Frecuencia de palabras
+\end{itemize}
+\end{center}
+\end{column}
+\begin{column}{0.5\textwidth}  %%<--- here
+    \begin{center}
+     \includegraphics[width=1\textwidth]{reglas3_2.png}
+    \begin{itemize}
+    \centering
+    \item[b)] Reglas
+    \end{itemize}
+    \end{center}
+\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}{Grupo 4}
+\begin{columns}
+\begin{column}{0.5\textwidth}
+\begin{center}
+\includegraphics[width=1\textwidth]{cluster4.png} \\
+\begin{itemize}
+    \item[a)] Frecuencia de palabras
+\end{itemize}
+\end{center}
+\end{column}
+\begin{column}{0.5\textwidth}  %%<--- here
+    \begin{center}
+     \includegraphics[width=1\textwidth]{reglas4_2.png}
+    \begin{itemize} 
+    \centering
+    \item[b)] Reglas
+    \end{itemize}
+    \end{center}
+\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}{Grupo 5}
+\begin{columns}
+\begin{column}{0.5\textwidth}
+\begin{center}
+\includegraphics[width=1\textwidth]{cluster5} \\
+\begin{itemize}
+    \item[a)] Frecuencia de palabras
+\end{itemize}
+\end{center}
+\end{column}
+\begin{column}{0.5\textwidth}  %%<--- here
+    \begin{center}
+     \includegraphics[width=0.8\textwidth]{reglas5_2.png}
+    \begin{itemize}
+    \centering
+    \item[b)] Reglas
+    \end{itemize}
+    \end{center}
+\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}{Reglas aplicadas con genes}
+\begin{columns}
+\begin{column}{0.5\textwidth}
+\begin{center}
+\includegraphics[width=1\textwidth]{CFTR2.png} \\
+\begin{itemize}
+   \centering
+    \item[1)] CFTR
+\end{itemize}
+\end{center}
+\end{column}
+\begin{column}{0.5\textwidth}  %%<--- here
+    \begin{center}
+     \includegraphics[width=0.6\textwidth]{RB1.png}
+    \begin{itemize}
+    \centering
+    \item[2)] RB1
+    \end{itemize}
+    \end{center}
+\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}{Modelo propuesto}
+\begin{figure}
+	\includegraphics[width=1\textwidth]{Slide5.JPG}
+\end{figure}
+\end{frame}
 
 \begin{frame}{Propuesta de visualización de resultados}
 Dashboard
 \end{frame}
 
-\begin{frame}{Publicaciones}
+\begin{frame}{Aportes}
 \begin{itemize}
-\justifying
-	\item[$*$] Propuesta de pipeline de identificación de variantes. Presentado en el Congreso de Genética Humana.Cali-Colombia 2016.
-	\item[$*$] Validación de pipeline para la identifiación de variantes presentado en la Escuela Latinoamericana de Genética Humana y Médica - ELAG. Caxias do Sul, RS, Brasil 2017.
-	\item[$*$] Data mining model for the association of genetic and clinical data in Colombian patients.  ISBM, Chicago-USA. 2018 Aceptado. 
-	\item[$*$] Association of variants with clinical data in a sample of the Colombian population using the Apriori algorithm. Cabana Travel Fellowships. ISCB-LA SOIBIO EMBnet. Viña del mar-Chile 2018. 
+	\justifying
+	\item \textit{``Pipeline"} para la identificación de variantes a partir de la secuenciación de regiones codificantes de genes
+	\item Primer base de datos con información clínica y genética de pacientes colombianos
+	\item Modelo de análisis basado en agrupación para el análisis de diagnósticos clínicos
+	\item Modelo de asociación de información genética con diagnósticos clínicos
+	\item Dashboard para la visualización de los resultados
 \end{itemize}
 \end{frame}
 
-\begin{frame}{Presentaciones}
-\begin{itemize}
-\justifying
-    \item[$*$] Exomic and clinical data management using Django en IV Congreso Colombiano de Bioinformática y Biología Computacional y la VIII Conferencia Iberoamericana de Bioinformática. Cali-Colombia 2017.
-	\item[$*$] Propuesta del  modelo de minería en datos clínicos. Conferencia Pycon Colombia.Medellín 2018.
-
-\end{itemize}
-\end{frame}
 \section{Conclusiones}
+
 \begin{frame}{Conclusiones}
 
     \begin{itemize}
     \justifying
-    \item Colombia no cuenta con un estudio de análisis de variantes y asociaciones clínicas a pesar de que la secuenciación esta disponible en el país. Siendo este trabajo pionero en nuestro país.
+     
+     \item  Tradicionalmente los análisis de secuenciación se realiza individualmente comparado con un referente. En este trabajo se propone otra forma de análisis en la cual se utiliza un grupo de pacientes colombianos a la vez junto con variables distintas a la información genética permitiendo un análisis más completo
     
-    \item La cantidad de herramientas para identificar variantes y la falta de consensos estándar dificultan la decisión de cuáles son las mejores herramientas y criterios para validar la identificación de variantes.
-    
-    \item El modelo presentado permite realizar análisis de variantes a nivel de población y no a nivel de individuo como se realiza actualmente. 
-    \end{itemize}
+    \item La asociación de información demográfica, el diagnóstico clínico y la información genética, permitió caracterizar grupos de pacientes usando un modelo de minería de datos asociados a enfermedades y genes específicos  \end{itemize}
   
 \end{frame}
 
 \begin{frame}{Conclusiones}
 \begin{itemize}
     \justifying
-    \item La utilización de técnicas de minería permiten realizar análisis alternativos de como es la distribución de las variantes en una población, no solo mirando el contexto del gen, si no el estado alélico de las variantes, la distribución por genero, rangos de edad y su posible relación con el fenotipo.
     
-    \item El gen RB1 presento variantes patogénicas donde los pacientes fueron portadores y afectados, demostrando que el modelo aplicado es lo suficientemente robusto para mirar el comportamiento de una variante dentro de una población.
+    \item La validación de un \textit{``pipeline"} para la identificación de secuencias es un paso necesario de para el preprocesamiento para implementar un modelo de minería de datos géneticos para garantizar la calidad de las variantes
+    
+    \item El integrar datos de historias clínicas e información genética en una base de datos con una interfaz gráfica permite acceder a los datos facilitando su exploración y los análisis básicos
+     
+    \item La utilización de técnicas de minería permiten realizar análisis alternativos a los datos genéticos como es la distribución de las variantes en una población, no solo mirando el contexto del gen, si no el estado alélico de las variantes, la distribución por genero, rangos de edad y su posible relación con el fenotipo   
+ 
 \end{itemize}    
     
 \end{frame}
@@ -691,9 +784,12 @@ Dashboard
 \begin{frame}{Conclusiones}
 \begin{itemize}
     \justifying
-    \item La visualización de los resultados de agrupamiento  y reglas de asociación, permite generar nuevas preguntas con respecto a los datos obtenidos, para proponer nuevas validaciones experimentales.
-	
-	\item Se presentó una de las primeras base de datos con información de variantes en la población colombiana a nivel de regiones codificantes.
+    
+     \item El gen RB1 presento variantes patogénicas donde se encontraron pacientes portadores y afectados de una variación, demostrando que el modelo aplicado es lo suficientemente robusto para mirar el comportamiento de una variante dentro de una población
+    
+    \item El gen CFTR se encontraron polimorfismos dentro de la población, mostrando la posibilidad de la identificación de la distribución de variantes en la muestra utilizada  
+    
+    \item La visualización de los resultados de agrupamiento  y reglas de asociación, permite generar nuevas preguntas con respecto a los datos obtenidos, para proponer nuevas validaciones experimentales
 \end{itemize}	
 \end{frame}
 
@@ -701,24 +797,54 @@ Dashboard
  
  \begin{itemize}
     \justifying
- \item Los grupos obtenidos a pesar de compartir palabras de diagnóstico frecuentes en común como seno y cáncer entre sí a nivel de caracterización de variantes son distintos.
-	\item Los pacientes que tienen un rango de edad de 0 a 10 años son los que más variantes presentan, pero son los pacientes que menos están representado en las reglas de asociación esto se debe a que hay una alta probabilidad de que sus variantes sean de baja frecuencia.
+    \item Los grupos obtenidos a pesar de tener diagnósticos similares a nivel de caracterización de variantes y de distribución demográfica son distintos
+	\item Los pacientes que tienen un rango de edad de 0 a 10 años son los que más variantes presentan, pero son los que están menos representado en las reglas de asociación esto se debe a que sus variantes son de baja frecuencia dentro de la muestra estudiada
 \end{itemize}
 \end{frame}
+
+\subsection{Trabajo futuro}
 \begin{frame}{Trabajo futuro}
 \justifying 
  \begin{itemize}
  \justifying 
 
-	\item Aumentar la información  como variantes de exomas y genomas, e información de regional de los pacientes para evaluar la distribución de las variantes en la población colombiana.
-
-	\item Desarrollar una base de datos NoSQL para integrar la información procedente de diferentes fuentes y que sea permeable a cambios en el tamaño de la información.
+	\item Aumentar la información  como variantes de exomas, genomas e información de regional de los pacientes para evaluar la distribución de las variantes en la población colombiana
 	
-	\item Calcular las frecuencias de variantes intermedias de modo que sea posible seleccionar items frecuentes, poco frecuentes e intermedios sin necesidad de que se calcule las asociaciones para todos los ítems. 
+	\item Integrar pacientes relacionado como padre, madre e hijo para evaluar los patrones de herencia dentro de la población
+
+	\item Desarrollar una base de datos NoSQL para integrar la información procedente de diferentes fuentes y que sea permeable a cambios en el tamaño de la información
+	
+\end{itemize}
+\end{frame}
+
+\subsection{Publicaciones}
+\begin{frame}{Publicaciones - Póster}
+\begin{itemize}
+\justifying
+	\item[1.] J. Vélez Segura and E. León Guzmán. ``Propuesta de pipeline de identificación de variantes". Cali-Colombia. 2016. Congreso Colombiano de Genética Humana
+	\item[2.] J. Vélez Segura and E. León Guzmán. ``Validación de pipeline para la identificación de variantes". Caxias do Sul, RS, Brasil. 2017. Escuela Latinoamericana de Genética Humana y Médica - ELAG
 
 \end{itemize}
 \end{frame}
 
+\begin{frame}{Publicaciones - Póster}
+\begin{itemize}
+\justifying
+	\item[3.] J. Vélez Segura and E. León Guzmán. ``Data mining model for the association of genetic and clinical data in Colombian patients". 2018 ISBM, Chicago-USA
+	\item[4.] J. Vélez Segura and E. León Guzmán ``Association of variants with clinical data in a sample of the Colombian population using the Apriori algorithm".  Viña del mar, Chile. 2018. Cabana Travel Fellowships. ISCB-LA SOIBIO EMBnet
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Presentaciones}
+\begin{itemize}
+\justifying
+    \item[1.] J. Vélez Segura and E. León Guzmán, ``Exomic and clinical data management using Django", Cali-Colombia, 2017. IV Congreso Colombiano de Bioinformática y Biología Computacional y la VIII Conferencia Iberoamericana de Bioinformática
+    
+	\item[2.] J. Vélez Segura and E. León Guzmán, ``Propuesta del modelo de minería en datos clínicos" Medellin-Colombia. 2018. Pycon Colombia
+\end{itemize}
+\end{frame}
+
+\subsection{Agradecimeitos}
 \begin{frame}{Agradecimientos}
  \justifying 
     A mi familia que me acompaño en todo este proceso, a Sergio Solano y a Julián Cruz que me apoyaron con sus conocimientos, a la profesora Elizabeth León por dirigir este trabajo y a todo el equipo de Genetix SAS quienes donaron los datos utilizados en este trabajo.
@@ -730,13 +856,17 @@ Dashboard
 
 \begin{frame}[allowframebreaks]
 	\frametitle{Referencias}
-	\bibliographystyle{apacite}
+	\bibliographystyle{ieeetr}
 		\bibliography{library.bib}
 \end{frame}
 
 \begin{frame}{}
   \centering \Large
-	{\fontsize{40}{50}\selectfont GRACIAS!}
+	{\fontsize{40}{50}\selectfont ¡GRACIAS!}
+	\\\ %
+	\\\
+	\\\
+	{\fontsize{40}{50}\selectfont ¿PREGUNTAS?}
 \end{frame}
 
 \end{document}
